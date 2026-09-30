@@ -13,6 +13,21 @@
     scroll-behavior: smooth;
   }
 }
+@keyframes featuredVideoReveal {
+  0% {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-featured-video {
+  animation: featuredVideoReveal 1.4s ease-out forwards;
+}
 
 .font-display {
   font-family: var(--font-display);

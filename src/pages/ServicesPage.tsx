@@ -19,6 +19,8 @@ interface ServicesPageProps {
   onSelectService: (serviceTitle: string) => void;
 }
 
+type Country = 'USA' | 'Canada' | 'Australia';
+
 export const ServicesPage: React.FC<ServicesPageProps> = ({
   onNavigate,
   onSelectService,
@@ -31,26 +33,21 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
     switch (id) {
       case 'srv-01':
       case 'srv-04':
-        return (
-          <Palette className="h-6 w-6 text-orange-400" />
-        );
+      case 'srv-07':
+        return <Palette className="h-6 w-6 text-orange-400" />;
 
       case 'srv-02':
       case 'srv-05':
-        return (
-          <Code2 className="h-6 w-6 text-sky-400" />
-        );
+      case 'srv-08':
+        return <Code2 className="h-6 w-6 text-sky-400" />;
 
       case 'srv-03':
       case 'srv-06':
-        return (
-          <ShoppingCart className="h-6 w-6 text-orange-400" />
-        );
+      case 'srv-09':
+        return <ShoppingCart className="h-6 w-6 text-orange-400" />;
 
       default:
-        return (
-          <Briefcase className="h-6 w-6 text-sky-400" />
-        );
+        return <Briefcase className="h-6 w-6 text-sky-400" />;
     }
   };
 
@@ -64,6 +61,10 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
   const canadaPlans = MENTOREX_SERVICES.filter((service) =>
     ['srv-04', 'srv-05', 'srv-06'].includes(service.id)
+  );
+
+  const australiaPlans = MENTOREX_SERVICES.filter((service) =>
+    ['srv-07', 'srv-08', 'srv-09'].includes(service.id)
   );
 
   /* =========================================================
@@ -148,7 +149,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             group-hover/flag:scale-110
           "
         >
-          {/* White background */}
           <rect
             x="0"
             y="0"
@@ -157,64 +157,14 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             fill="#ffffff"
           />
 
-          {/* Red stripes */}
-          <rect
-            x="0"
-            y="0"
-            width="60"
-            height="3.08"
-            fill="#B22234"
-          />
+          <rect x="0" y="0" width="60" height="3.08" fill="#B22234" />
+          <rect x="0" y="6.15" width="60" height="3.08" fill="#B22234" />
+          <rect x="0" y="12.30" width="60" height="3.08" fill="#B22234" />
+          <rect x="0" y="18.45" width="60" height="3.08" fill="#B22234" />
+          <rect x="0" y="24.60" width="60" height="3.08" fill="#B22234" />
+          <rect x="0" y="30.75" width="60" height="3.08" fill="#B22234" />
+          <rect x="0" y="36.90" width="60" height="3.10" fill="#B22234" />
 
-          <rect
-            x="0"
-            y="6.15"
-            width="60"
-            height="3.08"
-            fill="#B22234"
-          />
-
-          <rect
-            x="0"
-            y="12.30"
-            width="60"
-            height="3.08"
-            fill="#B22234"
-          />
-
-          <rect
-            x="0"
-            y="18.45"
-            width="60"
-            height="3.08"
-            fill="#B22234"
-          />
-
-          <rect
-            x="0"
-            y="24.60"
-            width="60"
-            height="3.08"
-            fill="#B22234"
-          />
-
-          <rect
-            x="0"
-            y="30.75"
-            width="60"
-            height="3.08"
-            fill="#B22234"
-          />
-
-          <rect
-            x="0"
-            y="36.90"
-            width="60"
-            height="3.10"
-            fill="#B22234"
-          />
-
-          {/* Blue canton */}
           <rect
             x="0"
             y="0"
@@ -223,7 +173,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             fill="#3C3B6E"
           />
 
-          {/* Stars */}
           <g fill="#ffffff">
             <circle cx="3" cy="3" r="0.65" />
             <circle cx="7" cy="3" r="0.65" />
@@ -260,7 +209,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           </g>
         </svg>
 
-        {/* Moving shine */}
         <span
           className="
             pointer-events-none
@@ -322,7 +270,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             group-hover/flag:scale-110
           "
         >
-          {/* White center */}
           <rect
             x="0"
             y="0"
@@ -331,7 +278,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             fill="#ffffff"
           />
 
-          {/* Red sides */}
           <rect
             x="0"
             y="0"
@@ -348,7 +294,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             fill="#D80621"
           />
 
-          {/* Maple leaf */}
           <path
             d="
               M30 4
@@ -374,7 +319,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             fill="#D80621"
           />
 
-          {/* Maple stem */}
           <rect
             x="28.5"
             y="23"
@@ -384,7 +328,168 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           />
         </svg>
 
-        {/* Moving shine */}
+        <span
+          className="
+            pointer-events-none
+            absolute
+            inset-0
+            -translate-x-full
+            bg-gradient-to-r
+            from-transparent
+            via-white/25
+            to-transparent
+            transition-transform
+            duration-700
+            group-hover/flag:translate-x-full
+          "
+        />
+      </div>
+    );
+  };
+
+  /* =========================================================
+     AUSTRALIA FLAG
+  ========================================================= */
+
+  const AustraliaFlag = () => {
+    return (
+      <div
+        className="
+          group/flag
+          relative
+          flex
+          h-16
+          w-20
+          items-center
+          justify-center
+          overflow-hidden
+          rounded-2xl
+          border
+          border-white/10
+          bg-white/5
+          transition-all
+          duration-500
+          hover:border-sky-400/50
+          hover:bg-white/10
+          hover:shadow-[0_0_25px_rgba(56,189,248,0.15)]
+        "
+      >
+        <svg
+          viewBox="0 0 60 40"
+          xmlns="http://www.w3.org/2000/svg"
+          className="
+            h-10
+            w-16
+            origin-center
+            transition-all
+            duration-500
+            ease-out
+            group-hover/flag:-translate-y-1
+            group-hover/flag:rotate-2
+            group-hover/flag:scale-110
+          "
+        >
+          {/* Blue background */}
+          <rect
+            x="0"
+            y="0"
+            width="60"
+            height="40"
+            fill="#012169"
+          />
+
+          {/* Union Jack */}
+          <path
+            d="
+              M0 0
+              H30
+              V20
+              H0
+              Z
+            "
+            fill="#012169"
+          />
+
+          {/* White diagonal lines */}
+          <path
+            d="
+              M0 0 L30 20
+              M30 0 L0 20
+            "
+            stroke="#ffffff"
+            strokeWidth="5"
+          />
+
+          {/* Red diagonal lines */}
+          <path
+            d="
+              M0 0 L30 20
+              M30 0 L0 20
+            "
+            stroke="#C8102E"
+            strokeWidth="2"
+          />
+
+          {/* White cross */}
+          <rect
+            x="12"
+            y="0"
+            width="6"
+            height="20"
+            fill="#ffffff"
+          />
+
+          <rect
+            x="0"
+            y="7"
+            width="30"
+            height="6"
+            fill="#ffffff"
+          />
+
+          {/* Red cross */}
+          <rect
+            x="13.5"
+            y="0"
+            width="3"
+            height="20"
+            fill="#C8102E"
+          />
+
+          <rect
+            x="0"
+            y="8.5"
+            width="30"
+            height="3"
+            fill="#C8102E"
+          />
+
+          {/* Commonwealth Star */}
+          <path
+            d="
+              M15 27
+              L16.5 30.5
+              L20.3 30.7
+              L17.3 33
+              L18.3 36.7
+              L15 34.7
+              L11.7 36.7
+              L12.7 33
+              L9.7 30.7
+              L13.5 30.5
+              Z
+            "
+            fill="#ffffff"
+          />
+
+          {/* Southern Cross stars */}
+          <circle cx="43" cy="10" r="1.5" fill="#ffffff" />
+          <circle cx="50" cy="17" r="1.3" fill="#ffffff" />
+          <circle cx="45" cy="25" r="1.5" fill="#ffffff" />
+          <circle cx="36" cy="20" r="1.2" fill="#ffffff" />
+          <circle cx="48" cy="30" r="1.2" fill="#ffffff" />
+        </svg>
+
         <span
           className="
             pointer-events-none
@@ -408,12 +513,36 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
      COUNTRY FLAG WRAPPER
   ========================================================= */
 
-  const renderFlag = (country: 'USA' | 'Canada') => {
+  const renderFlag = (country: Country) => {
     if (country === 'USA') {
       return <USAFlag />;
     }
 
-    return <CanadaFlag />;
+    if (country === 'Canada') {
+      return <CanadaFlag />;
+    }
+
+    return <AustraliaFlag />;
+  };
+
+  /* =========================================================
+     COUNTRY NAME
+  ========================================================= */
+
+  const getCountryName = (country: Country) => {
+    switch (country) {
+      case 'USA':
+        return 'United States';
+
+      case 'Canada':
+        return 'Canada';
+
+      case 'Australia':
+        return 'Australia';
+
+      default:
+        return '';
+    }
   };
 
   /* =========================================================
@@ -422,15 +551,17 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
   const renderPlanCard = (
     service: (typeof MENTOREX_SERVICES)[number],
-    country: 'USA' | 'Canada'
+    country: Country
   ) => {
     const isBusiness =
       service.id === 'srv-02' ||
-      service.id === 'srv-05';
+      service.id === 'srv-05' ||
+      service.id === 'srv-08';
 
     const isPremium =
       service.id === 'srv-03' ||
-      service.id === 'srv-06';
+      service.id === 'srv-06' ||
+      service.id === 'srv-09';
 
     const planName = getPlanName(service.title);
     const price = getPrice(service.title);
@@ -461,9 +592,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           }
         `}
       >
-        {/* =================================================
-            TOP ACCENT
-        ================================================= */}
+        {/* TOP ACCENT */}
 
         <div
           className={`
@@ -480,9 +609,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           `}
         />
 
-        {/* =================================================
-            MOST POPULAR
-        ================================================= */}
+        {/* MOST POPULAR */}
 
         {isBusiness && (
           <div className="absolute right-5 top-5 z-20">
@@ -513,12 +640,9 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
         <div className="flex flex-1 flex-col p-7 sm:p-8">
 
-          {/* =================================================
-              FLAG + COUNTRY
-          ================================================= */}
+          {/* FLAG + COUNTRY */}
 
           <div className="mb-7 flex items-center justify-between">
-
             <div className="flex items-center gap-4">
 
               {renderFlag(country)}
@@ -534,9 +658,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                     text-neutral-500
                   "
                 >
-                  {country === 'USA'
-                    ? 'United States'
-                    : 'Canada'}
+                  {getCountryName(country)}
                 </span>
 
                 <span
@@ -553,13 +675,14 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                 >
                   {service.number
                     .replace('🇺🇸 ', '')
-                    .replace('🇨🇦 ', '')}
+                    .replace('🇨🇦 ', '')
+                    .replace('🇦🇺 ', '')}
                 </span>
               </div>
-
             </div>
 
-            {/* Service Icon */}
+            {/* SERVICE ICON */}
+
             <div
               className="
                 flex
@@ -578,15 +701,11 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             >
               {getIcon(service.id)}
             </div>
-
           </div>
 
-          {/* =================================================
-              PLAN NAME
-          ================================================= */}
+          {/* PLAN NAME */}
 
           <div className="mb-5">
-
             <h2
               className="
                 font-display
@@ -627,12 +746,9 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               </span>
 
             </div>
-
           </div>
 
-          {/* =================================================
-              DESCRIPTION
-          ================================================= */}
+          {/* DESCRIPTION */}
 
           <p
             className="
@@ -646,9 +762,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             {service.description}
           </p>
 
-          {/* =================================================
-              FEATURES HEADER
-          ================================================= */}
+          {/* FEATURES HEADER */}
 
           <div
             className="
@@ -685,9 +799,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             </span>
           </div>
 
-          {/* =================================================
-              FEATURES
-          ================================================= */}
+          {/* FEATURES */}
 
           <div
             className="
@@ -737,9 +849,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             </div>
           </div>
 
-          {/* =================================================
-              SUPPORT / DELIVERY
-          ================================================= */}
+          {/* SUPPORT / DELIVERY */}
 
           <div className="mb-7 grid grid-cols-2 gap-3">
 
@@ -815,9 +925,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
           </div>
 
-          {/* =================================================
-              HIGHLIGHT
-          ================================================= */}
+          {/* HIGHLIGHT */}
 
           <div
             className="
@@ -842,13 +950,12 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             >
               {service.highlight
                 .replace('🇺🇸 ', '')
-                .replace('🇨🇦 ', '')}
+                .replace('🇨🇦 ', '')
+                .replace('🇦🇺 ', '')}
             </span>
           </div>
 
-          {/* =================================================
-              CTA
-          ================================================= */}
+          {/* CTA */}
 
           <button
             onClick={() => onSelectService(service.title)}
@@ -905,6 +1012,83 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
   };
 
   /* =========================================================
+     COUNTRY SECTION HEADER
+  ========================================================= */
+
+  const renderCountryHeader = (
+    country: Country,
+    title: string,
+    description: string
+  ) => {
+    return (
+      <div
+        className="
+          mb-9
+          flex
+          flex-col
+          gap-5
+          sm:flex-row
+          sm:items-center
+        "
+      >
+        {renderFlag(country)}
+
+        <div>
+          <span
+            className={`
+              block
+              text-xs
+              font-mono
+              uppercase
+              tracking-[0.2em]
+              ${
+                country === 'Canada'
+                  ? 'text-orange-400'
+                  : 'text-sky-400'
+              }
+            `}
+          >
+            {getCountryName(country)}
+          </span>
+
+          <h2
+            className="
+              mt-1
+              font-display
+              text-2xl
+              font-bold
+              text-white
+              sm:text-3xl
+            "
+          >
+            {title}
+          </h2>
+
+          <p
+            className="
+              mt-1
+              text-sm
+              text-neutral-400
+            "
+          >
+            {description}
+          </p>
+        </div>
+
+        <div
+          className="
+            hidden
+            h-px
+            flex-1
+            bg-white/10
+            sm:block
+          "
+        />
+      </div>
+    );
+  };
+
+  /* =========================================================
      PAGE
   ========================================================= */
 
@@ -920,7 +1104,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         lg:px-16
       "
     >
-
       <div className="mx-auto max-w-7xl">
 
         {/* =================================================
@@ -974,7 +1157,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             </span>
 
             <span className="font-semibold text-orange-400">
-              USA &amp; Canada
+              USA · Canada · Australia
             </span>
           </div>
 
@@ -992,6 +1175,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             Professional Websites
             <br />
             Built For{' '}
+
             <span
               className="
                 bg-gradient-to-r
@@ -1021,7 +1205,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             your business. From simple business websites to
             advanced digital experiences, MentorEx Digital builds
             fast, responsive and conversion-focused websites for
-            businesses across the USA and Canada.
+            businesses across the USA, Canada and Australia.
           </p>
 
         </div>
@@ -1032,71 +1216,11 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
         <section className="mb-24">
 
-          <div
-            className="
-              mb-9
-              flex
-              flex-col
-              gap-5
-              sm:flex-row
-              sm:items-center
-            "
-          >
-
-            <USAFlag />
-
-            <div>
-
-              <span
-                className="
-                  block
-                  text-xs
-                  font-mono
-                  uppercase
-                  tracking-[0.2em]
-                  text-sky-400
-                "
-              >
-                United States
-              </span>
-
-              <h2
-                className="
-                  mt-1
-                  font-display
-                  text-2xl
-                  font-bold
-                  text-white
-                  sm:text-3xl
-                "
-              >
-                USA Website Packages
-              </h2>
-
-              <p
-                className="
-                  mt-1
-                  text-sm
-                  text-neutral-400
-                "
-              >
-                Professional website solutions for businesses in
-                the USA.
-              </p>
-
-            </div>
-
-            <div
-              className="
-                hidden
-                h-px
-                flex-1
-                bg-white/10
-                sm:block
-              "
-            />
-
-          </div>
+          {renderCountryHeader(
+            'USA',
+            'USA Website Packages',
+            'Professional website solutions for businesses in the USA.'
+          )}
 
           <div
             className="
@@ -1119,71 +1243,11 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
         <section className="mb-24">
 
-          <div
-            className="
-              mb-9
-              flex
-              flex-col
-              gap-5
-              sm:flex-row
-              sm:items-center
-            "
-          >
-
-            <CanadaFlag />
-
-            <div>
-
-              <span
-                className="
-                  block
-                  text-xs
-                  font-mono
-                  uppercase
-                  tracking-[0.2em]
-                  text-orange-400
-                "
-              >
-                Canada
-              </span>
-
-              <h2
-                className="
-                  mt-1
-                  font-display
-                  text-2xl
-                  font-bold
-                  text-white
-                  sm:text-3xl
-                "
-              >
-                Canada Website Packages
-              </h2>
-
-              <p
-                className="
-                  mt-1
-                  text-sm
-                  text-neutral-400
-                "
-              >
-                Professional website solutions for businesses in
-                Canada.
-              </p>
-
-            </div>
-
-            <div
-              className="
-                hidden
-                h-px
-                flex-1
-                bg-white/10
-                sm:block
-              "
-            />
-
-          </div>
+          {renderCountryHeader(
+            'Canada',
+            'Canada Website Packages',
+            'Professional website solutions for businesses in Canada.'
+          )}
 
           <div
             className="
@@ -1195,6 +1259,33 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           >
             {canadaPlans.map((service) =>
               renderPlanCard(service, 'Canada')
+            )}
+          </div>
+
+        </section>
+
+        {/* =================================================
+            AUSTRALIA PACKAGES
+        ================================================= */}
+
+        <section className="mb-24">
+
+          {renderCountryHeader(
+            'Australia',
+            'Australia Website Packages',
+            'Professional website solutions for businesses in Australia.'
+          )}
+
+          <div
+            className="
+              grid
+              grid-cols-1
+              gap-6
+              lg:grid-cols-3
+            "
+          >
+            {australiaPlans.map((service) =>
+              renderPlanCard(service, 'Australia')
             )}
           </div>
 
@@ -1250,6 +1341,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               "
             >
               Every Website Includes Our{' '}
+
               <span
                 className="
                   bg-gradient-to-r
@@ -1540,7 +1632,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         </section>
 
       </div>
-
     </div>
   );
 };

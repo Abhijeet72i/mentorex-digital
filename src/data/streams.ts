@@ -230,6 +230,95 @@ export const MENTOREX_SERVICES: ServiceItem[] = [
     ],
     highlight: '🇨🇦 CANADA · PREMIUM',
   },
+
+  // =======================================================
+  // 🇦🇺 AUSTRALIA — STARTER
+  // =======================================================
+  {
+    id: 'srv-07',
+    number: '🇦🇺 Australia · 01',
+    title: 'Starter — $299 AUD',
+    description:
+      'Everything your Australian business needs to establish a professional online presence.',
+    features: [
+      '1–3 Pages',
+      'Custom Website Design',
+      'Mobile Responsive',
+      'Contact Form',
+      'Google Maps',
+      'Social Media Integration',
+      'Basic SEO',
+      'Speed Optimization',
+      '2 Revisions',
+      '7 Days Support',
+      '5–7 Day Delivery',
+    ],
+    highlight: '🇦🇺 AUSTRALIA · STARTER',
+  },
+
+  // =======================================================
+  // 🇦🇺 AUSTRALIA — BUSINESS
+  // =======================================================
+  {
+    id: 'srv-08',
+    number: '🇦🇺 Australia · 02',
+    title: 'Business — $599 AUD',
+    description:
+      'Turn your website into a powerful lead-generation tool designed to attract and convert customers.',
+    features: [
+      'Up to 6 Pages',
+      'Custom UI/UX Design',
+      'Mobile Responsive',
+      'Contact Form',
+      'Google Maps',
+      'Social Media Integration',
+      'Advanced SEO',
+      'Speed Optimization',
+      'Blog',
+      'Booking System',
+      'WhatsApp / Live Chat',
+      'Google Analytics',
+      'Google Search Console',
+      'Basic Copywriting',
+      '3 Revisions',
+      '30 Days Support',
+      '7–10 Day Delivery',
+    ],
+    highlight: '🇦🇺 AUSTRALIA · MOST POPULAR',
+  },
+
+  // =======================================================
+  // 🇦🇺 AUSTRALIA — PREMIUM
+  // =======================================================
+  {
+    id: 'srv-09',
+    number: '🇦🇺 Australia · 03',
+    title: 'Premium — $999 AUD',
+    description:
+      'A complete premium digital experience built for Australian businesses ready for advanced growth.',
+    features: [
+      'Up to 10 Pages',
+      'Premium Custom UI/UX',
+      'Advanced Responsive Design',
+      'Contact Form',
+      'Google Maps',
+      'Social Media Integration',
+      'Advanced SEO',
+      'Advanced Speed Optimization',
+      'Blog',
+      'Booking System',
+      'WhatsApp / Live Chat',
+      'Google Analytics',
+      'Google Search Console',
+      'Professional Copywriting',
+      'Advanced Animations',
+      'Custom Integrations',
+      '5 Revisions',
+      '60 Days Support',
+      '10–14 Day Delivery',
+    ],
+    highlight: '🇦🇺 AUSTRALIA · PREMIUM',
+  },
 ];
 
 /* =========================================================
@@ -239,70 +328,95 @@ export const MENTOREX_SERVICES: ServiceItem[] = [
 export const ARCHIVE_PROJECTS: ProjectShowcase[] = [
   {
     id: 'proj-01',
-    title: 'Lumina Osteria & Wine Bar',
-    client: 'Lumina Hospitality Group',
-    category: 'Restaurants',
+    title: 'Cloud Technologies',
+    client: 'Cloud Technologies',
+    category: 'E-Commerce',
     year: '2026',
     location: 'Manhattan, New York · USA',
     medium: 'Custom Next.js & OpenTable Integration',
-    scale: 'Multi-location luxury dining experience',
-    outcome: '+142% online table reservations in 60 days',
+
+    scale:
+      'Cloud infrastructure, cybersecurity & digital transformation solutions',
+
+    outcome:
+      'Improved operational efficiency through scalable cloud infrastructure, automation, and secure data management',
+
     summary:
-      'A dark, sensual digital presence celebrating artisan Italian gastronomy, featuring live sommelier wine lists and fluid booking animations.',
+      'Transform your business with secure, scalable, and reliable cloud solutions designed for the modern world. From cloud infrastructure and data management to cybersecurity, automation, and digital transformation, we provide the technology you need to work smarter, move faster, and grow without limits.',
+
     accentColor: '#f59e0b',
+
     deliverables: [
       'Custom Web Design',
       'Interactive Digital Menu',
       'Reservation Engine',
       'Local NYC SEO',
     ],
-    metrics: '+142% Reservations · 0.6s Load Time',
+
+    metrics:
+      'Scalable Cloud Infrastructure · Automated Workflows · Enhanced Data Security',
   },
 
   {
     id: 'proj-02',
-    title: 'The Aspen Ridge Boutique Resort',
-    client: 'Ridge Luxury Stays',
+    title: 'Rasa',
+    client: 'Rasa',
     category: 'Hotels',
     year: '2025',
     location: 'Aspen, Colorado · USA',
     medium: 'Bespoke Booking Flow & 4K Alpine Media',
-    scale: '48-suite mountain sanctuary & wellness spa',
+
+    scale:
+      'Contemporary Indian dining experience with a modern digital presence',
+
     outcome:
-      '98% direct bookings, cutting third-party OTA fees by 40%',
+      'Created a premium digital experience that showcases the restaurant, menu, and culinary identity',
+
     summary:
-      'A cinematic alpine retreat showcase with sweeping ambient winter video, interactive suite previews, and friction-free direct reservations.',
+      'At RASA, timeless Indian flavors meet contemporary culinary creativity. We bring together fresh ingredients, authentic spices, and modern techniques to create an elevated dining experience where every dish tells a story.',
+
     accentColor: '#38bdf8',
+
     deliverables: [
       'Cinematic Brand Website',
       'Direct Booking Engine',
       'Virtual Suite Tours',
       'Speed Optimization',
     ],
-    metrics: '98% Direct Bookings · 4.9/5 Guest UX',
+
+    metrics:
+      'Online Menu Experience · Mobile Responsive · Premium Brand Presentation',
   },
 
   {
     id: 'proj-03',
-    title: 'Apex Living Coastal Properties',
-    client: 'Apex Capital Realty',
-    category: 'Real Estate',
+    title: 'RoamUsa',
+    client: 'Travelling',
+    category: 'Startups',
     year: '2026',
     location: 'Miami & Vancouver · USA & Canada',
     medium: 'Ultra-High-Res Interactive Property Showcase',
-    scale: '$240M+ active luxury residential portfolio',
+
+    scale:
+      'Interactive real estate discovery and property showcase platform',
+
     outcome:
-      '$38M in closed acquisitions originated via online portal',
+      'Created a streamlined property discovery experience with interactive listings and location-focused browsing',
+
     summary:
       'An elite real estate portal with spatial property filtering, floor plan interactive overlays, and private VIP inquiry routing.',
+
     accentColor: '#818cf8',
+
     deliverables: [
       'MLS IDX Integration',
       'Neighborhood Guides',
       'Private Client Vault',
       'High-Net-Worth Lead Funnels',
     ],
-    metrics: '$38M Deal Volume · 100% Mobile Responsive',
+
+    metrics:
+      'Interactive Property Showcase · Location Discovery · Mobile Responsive',
   },
 
   {
@@ -313,19 +427,27 @@ export const ARCHIVE_PROJECTS: ProjectShowcase[] = [
     year: '2025',
     location: 'Seattle, Washington · USA',
     medium: 'Headless Shopify with Instant Micro-Cart',
-    scale: 'Global direct-to-consumer sustainable brand',
+
+    scale:
+      'Premium minimalist direct-to-consumer fashion storefront',
+
     outcome:
-      '3.8% checkout conversion rate (industry avg 1.8%)',
+      'Created a streamlined shopping experience focused on product discovery, frictionless checkout, and brand presentation',
+
     summary:
       'Streamlined Scandinavian-Japanese minimalist e-commerce storefront with instant page transitions, fluid sizing charts, and zero clutter.',
+
     accentColor: '#10b981',
+
     deliverables: [
       'Headless Shopify Store',
       'Custom Product Customizer',
       'Apple Pay 1-Click',
       'Klaviyo Email Automation',
     ],
-    metrics: '3.8% Conversion · +68% Repeat Customer Rate',
+
+    metrics:
+      'Headless E-Commerce · Instant Cart · Mobile-First Shopping',
   },
 
   {
@@ -336,18 +458,27 @@ export const ARCHIVE_PROJECTS: ProjectShowcase[] = [
     year: '2026',
     location: 'Chicago, Illinois · USA',
     medium: 'Institutional Trust Portal & Client Deck Engine',
-    scale: 'Asset management firm advising family offices',
-    outcome: 'Awarded Best Corporate Financial Website 2026',
+
+    scale:
+      'Premium financial advisory website for high-value clients and family offices',
+
+    outcome:
+      'Created a professional digital presence focused on trust, financial expertise, client communication, and authority',
+
     summary:
       'A commanding corporate website projecting stability, regulatory excellence, and forward-looking financial insights.',
+
     accentColor: '#e2e8f0',
+
     deliverables: [
       'Corporate Web Architecture',
       'Client Portal Interface',
       'Compliance Ready',
       'B2B Authority SEO',
     ],
-    metrics: 'Top 3 Organic Search Rankings · 99.99% Uptime',
+
+    metrics:
+      'Client-Focused UX · Professional Brand Presence · SEO-Ready Architecture',
   },
 
   {
@@ -358,18 +489,27 @@ export const ARCHIVE_PROJECTS: ProjectShowcase[] = [
     year: '2026',
     location: 'San Francisco, California · USA',
     medium: 'High-Conversion Interactive Product Landing',
-    scale: 'Series-A backed enterprise workspace platform',
-    outcome: '18,500 qualified waitlist signups in 3 weeks',
+
+    scale:
+      'Interactive AI SaaS product platform for enterprise teams',
+
+    outcome:
+      'Created an interactive product experience designed to communicate the platform, showcase capabilities, and drive qualified interest',
+
     summary:
       'Dark-mode, developer-centric marketing landing page featuring interactive canvas product demos, benchmark comparisons, and live API playground.',
+
     accentColor: '#ec4899',
+
     deliverables: [
       'Interactive Product Canvas',
       'Waitlist Management',
       'Docs & Pricing Engine',
       'Investor Relations Section',
     ],
-    metrics: '18.5k Waitlist · Featured on Product Hunt #1',
+
+    metrics:
+      'Interactive Product Demo · API Playground · Conversion-Focused Landing',
   },
 ];
 
